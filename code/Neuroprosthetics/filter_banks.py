@@ -3,7 +3,7 @@ from scipy import signal
 from scipy.io import wavfile
 from matplotlib import pyplot as plt
 import sounddevice as sd
-
+from Neuroprosthetics.plot_utils import set_plot_params
 
 
 def find_border_frequencies(num_electrodes, min_freq=100, max_freq=8000):
@@ -65,7 +65,7 @@ def butter_bandpass_filter(data, b, a):
     y = signal.lfilter(b, a, data)
     return y
 
-def filter_wav_file(audio_file_path='../data/exercise_7/KaSuKu.wav'):
+def filter_wav_file(save=False):
     '''
         Filters a given audiosignal with the given filterbanks.
 
@@ -76,6 +76,7 @@ def filter_wav_file(audio_file_path='../data/exercise_7/KaSuKu.wav'):
             f: filtered signal
     '''
 
+    audio_file_path = '../data/exercise_7/sorekara.wav'
     with open(audio_file_path, 'rb') as audiofile:
         sample_rate, data = wavfile.read(audiofile)
         data_array = np.array(data)
@@ -85,21 +86,24 @@ def filter_wav_file(audio_file_path='../data/exercise_7/KaSuKu.wav'):
     play_back_sound(data_array, sample_rate)
 
     # Plot the time signal of the initial audio file
+    set_plot_params([10,6], fontsize=14, spines=True)
     timearray = np.arange(0, data.shape[0], 1)/sample_rate
     plt.plot(timearray, data, linewidth=1)
+    plt.xlim(0, 2.5)
+    plt.xticks(np.arange(0, 2.50001, step=0.5))
+    plt.ylim(-1550, 1550)
+    plt.yticks(np.arange(-1500, 1500.00001, step=500))
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
-    plt.show()
+    plt.grid()
+
+    if save:
+        plt.savefig('../latex/tex_7/imgs/sorekara.eps', format='eps')
 
     filter_banks = generate_CI_filterbanks(12, sample_rate)
     filtered = []
     for f in filter_banks:
-        print(f)
-        plt.clf()
         filtered_signal = butter_bandpass_filter(data_array, *f)
         filtered.append(filtered_signal)
 
-    timearray = np.arange(0, filtered[0].shape[0], 1) / sample_rate
-    play_back_sound(filtered[5], sample_rate)
-    plt.plot(timearray, filtered[5])
-    plt.show()
+    return filtered, sample_rate

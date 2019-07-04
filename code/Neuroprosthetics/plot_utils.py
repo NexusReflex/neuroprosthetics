@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
-def set_plot_params(size=[5,5], fontsize=None, ticksize=None, tickwidth=None):
+def set_plot_params(size=[5,5], fontsize=None, ticksize=None, tickwidth=None, spines=False):
     plt.rcParams['figure.figsize'] = size
-    plt.rcParams['axes.spines.right'] = False
-    plt.rcParams['axes.spines.top'] = False
+    plt.rcParams['axes.spines.right'] = spines
+    plt.rcParams['axes.spines.top'] = spines
 
     plt.rcParams['xtick.direction'] = 'in'
     plt.rcParams['ytick.direction'] = 'in'
