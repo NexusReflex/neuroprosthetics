@@ -19,3 +19,4 @@ def set_plot_params(size=[5,5], fontsize=None, ticksize=None, tickwidth=None):
     if tickwidth is not None:
         plt.rcParams['xtick.major.width'] = tickwidth
         plt.rcParams['ytick.major.width'] = tickwidth
+
