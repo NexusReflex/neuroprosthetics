@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6ea6353-19fc-4275-ace8-db20ea8e45ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Neuroprosthetics/vocoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercise_8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuroprosthetics/filter_banks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Neuroprosthetics/filter_banks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuroprosthetics/plot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Neuroprosthetics/plot_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exercise_7.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercise_7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../latex/tex_7/exercise_7_LauraBielenberg.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../latex/tex_7/exercise_7_LauraBielenberg.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../latex/tex_7/exercise_7_LauraBielenberg.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../latex/tex_7/exercise_7_LauraBielenberg.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../latex/tex_7/imgs/center_frequencies_22.eps" beforeDir="false" afterPath="$PROJECT_DIR$/../latex/tex_7/imgs/center_frequencies_22.eps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../latex/tex_7/imgs/center_frequencies_all.eps" beforeDir="false" afterPath="$PROJECT_DIR$/../latex/tex_7/imgs/center_frequencies_all.eps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../latex/tex_7/imgs/wav_results.eps" beforeDir="false" afterPath="$PROJECT_DIR$/../latex/tex_7/imgs/wav_results.eps" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +24,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exercise_6.py">
+        <entry file="file://$PROJECT_DIR$/Neuroprosthetics/filter_banks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="145" selection-end-column="33" />
+            <state relative-caret-position="2370">
+              <caret line="158" column="9" selection-start-line="158" selection-start-column="4" selection-end-line="158" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -26,13 +35,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Neuroprosthetics/filter_banks.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Neuroprosthetics/vocoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+            <state relative-caret-position="60">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/exercise_8.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="116" column="14" lean-forward="true" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exercise_7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+            <state relative-caret-position="296">
+              <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -51,73 +72,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exercise_4.py">
+        <entry file="file://$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2085">
-              <caret line="22" column="75" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="75" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Neuroprosthetics/multicompartment_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Neuroprosthetics/plot_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exercise_1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exercise_2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exercise_3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exercise_5.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#92#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="416">
+              <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -133,22 +91,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>am</find>
-      <find>c</find>
-      <find>path=</find>
-      <find>path</find>
-      <find>expoEu</find>
-      <find>expo</find>
-      <find>cal</find>
-      <find>ro</find>
-      <find>rho</find>
-      <find>multi</find>
-      <find>roh</find>
       <find>colo</find>
       <find>yli</find>
       <find>plt.plot</find>
       <find>print</find>
+      <find>play_b</find>
+      <find>keep</find>
+      <find>key_c</find>
+      <find>play_back</find>
+      <find>play_back_sou</find>
+      <find>plot</find>
+      <find>single</find>
+      <find>show</find>
+      <find>plt.</find>
+      <find>[</find>
+      <find>fs</find>
+      <find>savea</find>
+      <find>aud</find>
+      <find>play</find>
+      <find>wavfi</find>
+      <find>wav</find>
+      <find>sub</find>
+      <find>band</find>
+      <find>bandpass</find>
+      <find>/=</find>
+      <find>play_ba</find>
+      <find>single</find>
+      <find>spect</find>
+      <find>specto</find>
+      <find>chann</find>
+      <find>norm</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/Neuroprosthetics</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -169,7 +145,6 @@
         <option value="$PROJECT_DIR$/code/exercise_5.py" />
         <option value="$PROJECT_DIR$/exercise_4.py" />
         <option value="$PROJECT_DIR$/Neuroprosthetics/LIF_neuron.py" />
-        <option value="$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py" />
         <option value="$PROJECT_DIR$/Neuroprosthetics/solver.py" />
         <option value="$PROJECT_DIR$/Neuroprosthetics/hodgkinHuxley.py" />
         <option value="$PROJECT_DIR$/Neuroprosthetics/slope_fields.py" />
@@ -180,8 +155,11 @@
         <option value="$PROJECT_DIR$/Neuroprosthetics/potential_fields.py" />
         <option value="$PROJECT_DIR$/exercise_6.py" />
         <option value="$PROJECT_DIR$/Neuroprosthetics/plot_utils.py" />
-        <option value="$PROJECT_DIR$/exercise_7.py" />
         <option value="$PROJECT_DIR$/Neuroprosthetics/filter_banks.py" />
+        <option value="$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py" />
+        <option value="$PROJECT_DIR$/exercise_7.py" />
+        <option value="$PROJECT_DIR$/Neuroprosthetics/vocoder.py" />
+        <option value="$PROJECT_DIR$/exercise_8.py" />
       </list>
     </option>
   </component>
@@ -195,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,6 +189,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,7 +215,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="exercise_7" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="exercise_8" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -249,7 +227,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercise_7.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercise_8.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -258,6 +236,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_INHERITED" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -283,20 +264,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49879518" visible="true" weight="0.17829457" />
-      <window_info id="Structure" order="1" sideWeight="0.50120485" side_tool="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48377582" visible="true" weight="0.13037351" />
+      <window_info id="Structure" order="1" sideWeight="0.5162242" side_tool="true" visible="true" weight="0.13037351" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.59156626" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32871288" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -341,6 +321,16 @@
           <line>52</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Downloads/submission_2/code/slope_fields.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/exercise_8.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -354,13 +344,6 @@
     <entry file="file://$PROJECT_DIR$/code/Neuroprosthetics/multicompartment_model.py" />
     <entry file="file://$PROJECT_DIR$/code/Neuroprosthetics/hodgkinHuxley.py" />
     <entry file="file://$PROJECT_DIR$/code/exercise_5.py" />
-    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Neuroprosthetics/hodgkinHuxley.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
@@ -406,20 +389,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercise_5.py">
+    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/multicompartment_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise_6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="145" selection-end-column="33" />
+        <state relative-caret-position="465">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -433,63 +406,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercise_2.py">
+    <entry file="file://$PROJECT_DIR$/exercise_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="300">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercise_3.py">
+    <entry file="file://$PROJECT_DIR$/exercise_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        <state relative-caret-position="405">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exercise_4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2085">
-          <caret line="22" column="75" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="75" />
+        <state relative-caret-position="285">
+          <caret line="22" column="75" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="75" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/plot_utils.py">
+    <entry file="file://$PROJECT_DIR$/exercise_6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/multicompartment_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        <state relative-caret-position="185">
+          <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="145" selection-end-column="33" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercise_7.py">
+    <entry file="file://$USER_HOME$/Downloads/submission_2/code/slope_fields.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+        <state relative-caret-position="618">
+          <caret line="77" selection-start-line="77" selection-end-line="77" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/plot_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise_5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="86" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/signalGeneration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/filter_banks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="158" column="9" selection-start-line="158" selection-start-column="4" selection-end-line="158" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/vocoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neuroprosthetics/filter_banks.py">
+    <entry file="file://$PROJECT_DIR$/exercise_7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+        <state relative-caret-position="296">
+          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="116" column="14" lean-forward="true" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

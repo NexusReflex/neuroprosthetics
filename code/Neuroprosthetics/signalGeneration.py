@@ -78,7 +78,7 @@ def plotFFT(fft_signal_vector, frequencies_vector, xlims, ylims, name, fontsize=
     plt.show()
 
 
-def calcSingleSidedAmplitudeSpectrum(input_signal_array, sampleRate):
+def calcSingleSidedAmplitudeSpectrum(input_signal_array, sampleRate, linewidth=1.0, plot=True):
     """
      Calculates a Single-Sided Amplitude Spectrum of the inputsignal.
      """
@@ -89,11 +89,18 @@ def calcSingleSidedAmplitudeSpectrum(input_signal_array, sampleRate):
     fsig = np.abs(Y)  # get rid of imaginary part
     freq = sampleRate * np.arange((N / 2)) / N  # frequency vector
     freq /= 1000  # / 1000 for kHz)
-    if sampleRate == 10000:
-        plotFFT(fsig, freq, [freq[0], 5], [fsig.min(), fsig.max() + 0.2], '10kHz_samplefreq')
-    elif sampleRate == 100000:
-        plotFFT(fsig[:10000], freq[:10000], [freq[0], 10], [fsig.min(),
-                                                             fsig.max() + 0.2], '100kHz_samplefreq')
+
+    if plot:
+        if sampleRate == 10000:
+            plotFFT(fsig, freq, [freq[0], 5], [fsig.min(), fsig.max() + 0.2], '10kHz_samplefreq', linewidth)
+        elif sampleRate == 100000:
+            plotFFT(fsig[:10000], freq[:10000], [freq[0], 10], [fsig.min(),
+                                                                 fsig.max() + 0.2], '100kHz_samplefreq', linewidth)
+        elif sampleRate == 20000:
+            plotFFT(fsig, freq, [freq[0], 10], [fsig.min(), fsig.max() + 0.2], '20kHz_samplefreq', linewidth)
+        else:
+            plotFFT(fsig, freq, [freq[0], freq[-1]],[fsig.min(),
+                                                                 fsig.max() + 0.2], None, linewidth)
     else:
-        plotFFT(fsig, freq, [freq[0], 10], [fsig.min(), fsig.max() + 0.2], '20kHz_samplefreq')
+        return freq, fsig
 
