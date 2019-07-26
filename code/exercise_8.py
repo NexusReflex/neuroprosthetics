@@ -5,35 +5,29 @@ from scipy.io import wavfile
 from exercise_7 import plot_spectogram
 
 
-def single_sided_spectrum(signal, dt):
-    n = signal.size
-    spectrum = np.abs(np.fft.rfft(signal) / n)
-    frequencies = np.fft.rfftfreq(n, dt)
-    spectrum[1:] = spectrum[1:] * 2
-    return frequencies, spectrum
-
-
-def plot_filtered(signal, time, name, idx=False, save=False):
-    set_plot_params([13, 8], fontsize=11)
+def plot_filtered(sig, t_array, name, idx=False, save=False):
+    set_plot_params([13, 8], fontsize=15)
     fig, ax = plt.subplots(3, 4, sharex='col', sharey='row')
-    fig.subplots_adjust(hspace=0.3, wspace=0.1)
+    fig.subplots_adjust(hspace=0.3, wspace=0.2)
     ax = ax.ravel()
 
-    for i, channel in enumerate(signal):
-        set_plot_params([10, 8], fontsize=11, spines=True)
+    for i, channel in enumerate(sig):
+        set_plot_params(fontsize=15, spines=True)
+        ax[i].set_ylim(-1, 1)
+        plt.yticks(np.arange(-1, 1.00001, step=0.5), fontsize=15)
         channel /= np.max(channel)
-        plt.ylim(-1, 1)
         if idx:
-            indices = (time > 1) & (time < 1.04)
-            timeslot = time[indices]
+            indices = (t_array > 1.04) & (t_array < 1.08)
+            timeslot = t_array[indices]
             noise = channel[indices]
             ax[i].plot(timeslot, noise)
         else:
-            ax[i].plot(time, channel)
+            ax[i].plot(t_array, channel)
 
-        ax[i].set_title('Channel {}'.format(i))
+        ax[i].set_title('Channel {}'.format(i), fontdict={'fontsize': 15, 'fontweight': 'medium'})
         if i > 7:
             ax[i].set_xlabel('Time (s)')
+
 
     if save:
         plt.savefig('../latex/tex_8/imgs/' + name + '.eps',
@@ -42,16 +36,16 @@ def plot_filtered(signal, time, name, idx=False, save=False):
 
 
 def plot_envelope(env, time_array, name, save=False):
-    set_plot_params([13, 8], fontsize=11)
+    set_plot_params([13, 8], fontsize=15)
     fig, ax = plt.subplots(3, 4, sharex='col', sharey='row')
     fig.subplots_adjust(hspace=0.3, wspace=0.1)
     ax = ax.ravel()
 
     for i, envel in enumerate(env):
-        set_plot_params([10, 8], fontsize=11, spines=True)
+        set_plot_params([10, 8], fontsize=15, spines=True)
         plt.ylim(-1, 1)
         ax[i].plot(time_array, envel, color='orange')
-        ax[i].set_title('Channel {}'.format(i))
+        ax[i].set_title('Channel {}'.format(i), fontdict={'fontsize': 15, 'fontweight': 'medium'})
         if i > 7:
             ax[i].set_xlabel('Time (s)')
 
@@ -61,9 +55,18 @@ def plot_envelope(env, time_array, name, save=False):
 
 
 def show_vocoder_result(channels, time_array, summed_signal, fs, name, save=False):
+    def single_sided_spectrum(sig, dt):
+        n = sig.size
+        spectrum = np.abs(np.fft.rfft(sig) / n)
+        frequencies = np.fft.rfftfreq(n, dt)
+        spectrum[1:] = spectrum[1:] * 2
+        return frequencies, spectrum
+
+    set_plot_params([10, 8], fontsize=11, spines=True)
     plot_filtered(channels, time_array, 'vocoder_channels')
     print('Vocoder signal')
     play_back_sound(summed_signal, fs)
+    time.sleep(2)
     f, s = single_sided_spectrum(summed_signal, fs)
     plt.figure()
     plt.loglog()
@@ -76,7 +79,6 @@ def show_vocoder_result(channels, time_array, summed_signal, fs, name, save=Fals
                     format='eps')
 
     plot_spectogram(summed_signal, sample_rate, exercise_num=8, save=save)
-
 
 
 if __name__=='__main__':
@@ -110,8 +112,5 @@ if __name__=='__main__':
 
         print('result for lower clip: {}'.format(lower_clip))
         show_vocoder_result(vocoder_channels, t, summed_channels, sample_rate, 'vocoder_lower_clip_{}'.format(lower_clip), save=save_img)
-        time.sleep(2)
-
-
 
     plt.show()
