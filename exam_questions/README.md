@@ -1,4 +1,5 @@
 # Example Questions for the  Neuroprosthetics Exam
+by Arne Sachtler
 
 ## 1. What types of neural implants do you know? Which groups can they be classified into?
 
