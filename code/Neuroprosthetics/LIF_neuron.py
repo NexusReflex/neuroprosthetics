@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def rectifiedSignalGenerator(amplitude, stepsize, frequency, duration):
     samples = duration/stepsize
 

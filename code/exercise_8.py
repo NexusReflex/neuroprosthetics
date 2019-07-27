@@ -6,7 +6,7 @@ from exercise_7 import plot_spectogram
 
 
 def plot_filtered(sig, t_array, name, idx=False, save=False):
-    set_plot_params([13, 8], fontsize=15)
+    set_plot_params([13, 8], fontsize=18)
     fig, ax = plt.subplots(3, 4, sharex='col', sharey='row')
     fig.subplots_adjust(hspace=0.3, wspace=0.2)
     ax = ax.ravel()
@@ -14,7 +14,7 @@ def plot_filtered(sig, t_array, name, idx=False, save=False):
     for i, channel in enumerate(sig):
         set_plot_params(fontsize=15, spines=True)
         ax[i].set_ylim(-1, 1)
-        plt.yticks(np.arange(-1, 1.00001, step=0.5), fontsize=15)
+        plt.yticks(np.arange(-1, 1.00001, step=0.5), fontsize=18)
         channel /= np.max(channel)
         if idx:
             indices = (t_array > 1.04) & (t_array < 1.08)
@@ -24,7 +24,7 @@ def plot_filtered(sig, t_array, name, idx=False, save=False):
         else:
             ax[i].plot(t_array, channel)
 
-        ax[i].set_title('Channel {}'.format(i), fontdict={'fontsize': 15, 'fontweight': 'medium'})
+        ax[i].set_title('Channel {}'.format(i), fontdict={'fontsize': 18, 'fontweight': 'medium'})
         if i > 7:
             ax[i].set_xlabel('Time (s)')
 
@@ -34,18 +34,19 @@ def plot_filtered(sig, t_array, name, idx=False, save=False):
                     format='eps')
 
 
+def plot_envelope(original_sig, env, time_array, name, save=False):
 
-def plot_envelope(env, time_array, name, save=False):
-    set_plot_params([13, 8], fontsize=15)
+    set_plot_params([13, 8], fontsize=18)
     fig, ax = plt.subplots(3, 4, sharex='col', sharey='row')
     fig.subplots_adjust(hspace=0.3, wspace=0.1)
     ax = ax.ravel()
 
-    for i, envel in enumerate(env):
-        set_plot_params([10, 8], fontsize=15, spines=True)
+    for i, (envel, sig) in enumerate(zip(env, original_sig)):
+        set_plot_params([10, 8], fontsize=18, spines=True)
         plt.ylim(-1, 1)
+        ax[i].plot(time_array, sig)
         ax[i].plot(time_array, envel, color='orange')
-        ax[i].set_title('Channel {}'.format(i), fontdict={'fontsize': 15, 'fontweight': 'medium'})
+        ax[i].set_title('Channel {}'.format(i), fontdict={'fontsize': 18, 'fontweight': 'medium'})
         if i > 7:
             ax[i].set_xlabel('Time (s)')
 
@@ -54,7 +55,7 @@ def plot_envelope(env, time_array, name, save=False):
                     format='eps')
 
 
-def show_vocoder_result(channels, time_array, summed_signal, fs, name, save=False):
+def show_vocoder_result(channels, time_array, summed_signal, fs, name, save, play_audio=False):
     def single_sided_spectrum(sig, dt):
         n = sig.size
         spectrum = np.abs(np.fft.rfft(sig) / n)
@@ -62,12 +63,15 @@ def show_vocoder_result(channels, time_array, summed_signal, fs, name, save=Fals
         spectrum[1:] = spectrum[1:] * 2
         return frequencies, spectrum
 
-    set_plot_params([10, 8], fontsize=11, spines=True)
     plot_filtered(channels, time_array, 'vocoder_channels')
     print('Vocoder signal')
-    play_back_sound(summed_signal, fs)
-    time.sleep(2)
+
+    if play_audio:
+        play_back_sound(summed_signal, fs)
+        time.sleep(2)
+
     f, s = single_sided_spectrum(summed_signal, fs)
+    set_plot_params([10, 8], fontsize=15, spines=True)
     plt.figure()
     plt.loglog()
     plt.plot(f, s)
@@ -78,13 +82,13 @@ def show_vocoder_result(channels, time_array, summed_signal, fs, name, save=Fals
         plt.savefig('../latex/tex_8/imgs/' + name + '.eps',
                     format='eps')
 
-    plot_spectogram(summed_signal, sample_rate, exercise_num=8, save=save)
+    plot_spectogram(summed_signal, sample_rate, name=name, exercise_num=8, save=save)
 
 
 if __name__=='__main__':
 
     audio_file_name = "sorekara"
-    play_back = False
+    play_back = True
     num_channels = 12
     save_img=True
 
@@ -97,12 +101,13 @@ if __name__=='__main__':
 
     noise_f = noise_generator(num_channels, signal_duration=t_max, fs=sample_rate, order=4)
     t = t[:noise_f.shape[1]]
+
     plot_filtered(noise_f, t, 'noise_filtered_timeslot', idx=True, save=save_img)
 
     envelopes = extract_envelopes(filtered_channels, fs=sample_rate)
 
     plot_filtered(filtered_channels, t, 'filtered_audio', save=save_img)
-    plot_envelope(envelopes, t, 'envelopes', save=save_img)
+    plot_envelope(filtered_channels, envelopes, t, 'envelopes', save=save_img)
 
     for lower_clip in [0.4, 0.5, 0.6, 0.7]: # best is 0.6
         env_compressed = compress_envelopes(envelopes, lower_clip=lower_clip)
@@ -111,6 +116,6 @@ if __name__=='__main__':
         vocoder_channels, summed_channels = vocoder(env_compressed, noise_f, audio_data)
 
         print('result for lower clip: {}'.format(lower_clip))
-        show_vocoder_result(vocoder_channels, t, summed_channels, sample_rate, 'vocoder_lower_clip_{}'.format(lower_clip), save=save_img)
+        show_vocoder_result(vocoder_channels, t, summed_channels, sample_rate, 'vocoder_lower_clip_{}'.format(lower_clip), save_img, play_audio=play_back)
 
     plt.show()

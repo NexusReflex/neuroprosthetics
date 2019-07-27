@@ -1,5 +1,6 @@
-from Neuroprosthetics.filter_banks import *
-from scipy.signal import hilbert, chirp
+from Neuroprosthetics.filter_banks import generate_CI_filterbanks, butter_bandpass_filter
+import scipy.signal as signal
+import numpy as np
 
 # generate randomn noise
 def noise_generator(num_channels, gain=1, signal_duration=1, fs=44.1e3, order=4):
@@ -15,7 +16,7 @@ def noise_generator(num_channels, gain=1, signal_duration=1, fs=44.1e3, order=4)
 
 def extract_envelopes(channels, fs=44.1e3, low_pass=True, cutoff=30):
 
-    analytic_signal = hilbert(channels)
+    analytic_signal = signal.hilbert(channels)
     raw_envelopes = np.abs(analytic_signal)
 
     if low_pass:
@@ -28,13 +29,14 @@ def extract_envelopes(channels, fs=44.1e3, low_pass=True, cutoff=30):
     else:
         envelopes = raw_envelopes
 
-    mins = np.min(envelopes, axis=1)
-    maxs = np.max(envelopes, axis=1)
-    diffs = maxs - mins
+    min = np.min(envelopes, axis=1)
+    max = np.max(envelopes, axis=1)
+    diffs = max - min
 
-    return (envelopes - mins[:, np.newaxis]) / diffs[:, np.newaxis]
+    return (envelopes - min[:, np.newaxis]) / diffs[:, np.newaxis]
 
-def compress_envelopes(env, c=500, lower_clip=0.2):
+
+def compress_envelopes(env, c=500, lower_clip=0.6):
 
     env_comp = np.log10(1+c*env)/np.log10(c+1)
 

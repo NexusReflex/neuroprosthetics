@@ -56,7 +56,7 @@ def plot_wav_results(audio_name, filtered_path, num_electrodes=12, saveImg=False
     :param saveAudio: (bool)
     :return: list of filtered signals, sample rate
     '''
-    filtered, Fs = filter_wav_file(audio_name, num_electrodes, save=True)
+    filtered, Fs = filter_wav_file(audio_name, num_electrodes, order=2, save=True)
 
     set_plot_params([13, 8], fontsize=11)
 
@@ -133,12 +133,13 @@ def plot_summed_channels(audio_name, num_electrodes=12, saveImg=False):
     plt.show()
 
 
-def plot_spectogram(signal, fs, f_max=10e3, title=None, time_window=10e-3, overlap=5e-3, name=None, save=False, exercise_num=7):
+def plot_spectogram(signal, fs, f_max=10e3, title='', time_window=10e-3, overlap=5e-3, name=None, save=False, exercise_num=7):
     f, t, Sxx = spectrogram(signal, fs, nperseg=int(time_window * fs),
                             noverlap=int(overlap * fs),
                             return_onesided=True,
                             mode='magnitude')
     indices = f < f_max
+    set_plot_params([10, 8], fontsize=15, spines=True)
     plt.figure()
     plt.pcolormesh(t, f[indices], Sxx[indices, :], cmap='nipy_spectral')
     plt.ylabel('Frequency [Hz]')
@@ -150,6 +151,7 @@ def plot_spectogram(signal, fs, f_max=10e3, title=None, time_window=10e-3, overl
         plt.savefig(
             '../latex/tex_{}/imgs/spectogram_{}_CI.eps'.format(exercise_num, name),
             format='eps')
+        print('../latex/tex_{}/imgs/spectogram_{}_CI.eps'.format(exercise_num, name))
 
 
 if __name__=='__main__':
